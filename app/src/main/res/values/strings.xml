@@ -1,0 +1,56 @@
+<resources>
+    <string name="app_name">NimmaGuru</string>
+
+    <!-- Home Screen -->
+    <string name="home_title">Nimma Guru</string>
+    <string name="home_subtitle">Community Mentorship App</string>
+    <string name="search_hint">Search Guru Name or Subject</string>
+    <string name="nearby_gurus">Nearby Gurus</string>
+    <string name="view_profile">View Profile</string>
+
+    <!-- Chips -->
+    <string name="chip_all">All</string>
+    <string name="chip_math">Math</string>
+    <string name="chip_science">Science</string>
+    <string name="chip_english">English</string>
+    <string name="chip_computer">Computer</string>
+
+    <!-- Profile -->
+    <string name="book_session">Book Session</string>
+    <string name="edit_profile">Edit Profile</string>
+
+    <!-- Booking -->
+    <string name="booking_title">Book a Session</string>
+    <string name="enter_date">Enter Date (e.g. Sunday)</string>
+    <string name="enter_time">Enter Time (e.g. 10 AM)</string>
+    <string name="confirm_booking">Confirm Booking</string>
+    <string name="booking_success">Session Booked Successfully!</string>
+
+    <!-- Appreciation -->
+    <string name="appreciation_title">Wall of Fame</string>
+    <string name="thank_you_hint">Write your thank you message...</string>
+    <string name="post_appreciation">Post Appreciation</string>
+
+    <!-- Calendar -->
+    <string name="calendar_title">My Class Calendar</string>
+    <string name="upcoming_sessions">Upcoming Sessions</string>
+
+    <!-- Settings -->
+    <string name="settings_title">Settings</string>
+    <string name="language_label">Language</string>
+    <string name="logout">Logout</string>
+
+    <!-- AI Assistant -->
+    <string name="ai_title">AI Study Assistant</string>
+    <string name="ai_subtitle">Powered by Gemini AI</string>
+    <string name="ask_question_hint">Ask a question...</string>
+    <string name="ask_button">Ask</string>
+
+    <!-- Navigation -->
+    <string name="nav_home">Home</string>
+    <string name="nav_search">Search</string>
+    <string name="nav_calendar">Calendar</string>
+    <string name="nav_appreciation">Wall of Fame</string>
+    <string name="nav_ai">AI Assistant</string>
+    <string name="nav_settings">Settings</string>
+</resources>

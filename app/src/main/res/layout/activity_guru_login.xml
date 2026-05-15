@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="25dp"
+    android:gravity="center"
+    android:background="#F5F7FA">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Guru Login"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:textColor="#F4B400"/>
+
+    <EditText
+        android:id="@+id/etGuruEmail"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:hint="Guru Email"
+        android:layout_marginTop="30dp"/>
+
+    <EditText
+        android:id="@+id/etGuruPassword"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:layout_marginTop="15dp"/>
+
+    <Button
+        android:id="@+id/btnGuruLogin"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:text="Login"
+        android:textStyle="bold"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="#F4B400"
+        android:layout_marginTop="25dp"/>
+
+</LinearLayout>

@@ -1,0 +1,56 @@
+<resources>
+    <string name="app_name">ನಿಮ್ಮ ಗುರು</string>
+
+    <!-- Home Screen -->
+    <string name="home_title">ನಿಮ್ಮ ಗುರು</string>
+    <string name="home_subtitle">ಸಮುದಾಯ ಮಾರ್ಗದರ್ಶನ ಅಪ್ಲಿಕೇಶನ್</string>
+    <string name="search_hint">ಗುರು ಹೆಸರು ಅಥವಾ ವಿಷಯ ಹುಡುಕಿ</string>
+    <string name="nearby_gurus">ಹತ್ತಿರದ ಗುರುಗಳು</string>
+    <string name="view_profile">ಪ್ರೊಫೈಲ್ ನೋಡಿ</string>
+
+    <!-- Chips -->
+    <string name="chip_all">ಎಲ್ಲಾ</string>
+    <string name="chip_math">ಗಣಿತ</string>
+    <string name="chip_science">ವಿಜ್ಞಾನ</string>
+    <string name="chip_english">ಇಂಗ್ಲಿಷ್</string>
+    <string name="chip_computer">ಕಂಪ್ಯೂಟರ್</string>
+
+    <!-- Profile -->
+    <string name="book_session">ಸೆಷನ್ ಬುಕ್ ಮಾಡಿ</string>
+    <string name="edit_profile">ಪ್ರೊಫೈಲ್ ಸಂಪಾದಿಸಿ</string>
+
+    <!-- Booking -->
+    <string name="booking_title">ಸೆಷನ್ ಬುಕ್ ಮಾಡಿ</string>
+    <string name="enter_date">ದಿನಾಂಕ ನಮೂದಿಸಿ</string>
+    <string name="enter_time">ಸಮಯ ನಮೂದಿಸಿ</string>
+    <string name="confirm_booking">ಬುಕಿಂಗ್ ದೃಢಪಡಿಸಿ</string>
+    <string name="booking_success">ಸೆಷನ್ ಯಶಸ್ವಿಯಾಗಿ ಬುಕ್ ಆಗಿದೆ!</string>
+
+    <!-- Appreciation -->
+    <string name="appreciation_title">ಗೌರವ ಗೋಡೆ</string>
+    <string name="thank_you_hint">ನಿಮ್ಮ ಧನ್ಯವಾದ ಸಂದೇಶ ಬರೆಯಿರಿ...</string>
+    <string name="post_appreciation">ಪ್ರಶಂಸೆ ಪೋಸ್ಟ್ ಮಾಡಿ</string>
+
+    <!-- Calendar -->
+    <string name="calendar_title">ನನ್ನ ತರಗತಿ ಕ್ಯಾಲೆಂಡರ್</string>
+    <string name="upcoming_sessions">ಮುಂಬರುವ ಸೆಷನ್‌ಗಳು</string>
+
+    <!-- Settings -->
+    <string name="settings_title">ಸೆಟ್ಟಿಂಗ್‌ಗಳು</string>
+    <string name="language_label">ಭಾಷೆ</string>
+    <string name="logout">ಲಾಗ್ ಔಟ್</string>
+
+    <!-- AI Assistant -->
+    <string name="ai_title">AI ಅಧ್ಯಯನ ಸಹಾಯಕ</string>
+    <string name="ai_subtitle">Gemini AI ಮೂಲಕ</string>
+    <string name="ask_question_hint">ಪ್ರಶ್ನೆ ಕೇಳಿ...</string>
+    <string name="ask_button">ಕೇಳಿ</string>
+
+    <!-- Navigation -->
+    <string name="nav_home">ಮುಖಪುಟ</string>
+    <string name="nav_search">ಹುಡುಕಿ</string>
+    <string name="nav_calendar">ಕ್ಯಾಲೆಂಡರ್</string>
+    <string name="nav_appreciation">ಗೌರವ ಗೋಡೆ</string>
+    <string name="nav_ai">AI ಸಹಾಯಕ</string>
+    <string name="nav_settings">ಸೆಟ್ಟಿಂಗ್‌ಗಳು</string>
+</resources>

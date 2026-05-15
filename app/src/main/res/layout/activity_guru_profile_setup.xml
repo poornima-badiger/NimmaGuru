@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:background="#F5F5F5">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Create Guru Profile"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:textColor="#1E3A8A"/>
+
+    <EditText
+        android:id="@+id/edtName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Guru Name"
+        android:layout_marginTop="20dp"/>
+
+    <EditText
+        android:id="@+id/edtSubject"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Subject"/>
+
+    <EditText
+        android:id="@+id/edtTime"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Free Time"/>
+
+    <EditText
+        android:id="@+id/edtLocation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Location"
+        android:layout_marginTop="12dp"/>
+
+    <Button
+        android:id="@+id/btnSaveGuru"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Save Guru Profile"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="#1E3A8A"
+        android:textColor="#FFFFFF"/>
+
+</LinearLayout>
