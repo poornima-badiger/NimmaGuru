@@ -2,6 +2,7 @@ package com.example.nimmaguru.activities
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
@@ -19,38 +20,70 @@ class StudentLoginActivity : AppCompatActivity() {
 
         auth = FirebaseAuth.getInstance()
 
-        val email = findViewById<EditText>(R.id.etEmail)
-        val password = findViewById<EditText>(R.id.etPassword)
+        val etEmail = findViewById<EditText>(R.id.etEmail)
+        val etPassword = findViewById<EditText>(R.id.etPassword)
         val btnLogin = findViewById<Button>(R.id.btnStudentLogin)
+        val btnSkip = findViewById<Button>(R.id.btnSkip)
 
+        // SKIP — go directly to Home without login
+        btnSkip.setOnClickListener {
+            goToHome()
+        }
+
+        // LOGIN / AUTO-REGISTER
         btnLogin.setOnClickListener {
+            val email = etEmail.text.toString().trim()
+            val password = etPassword.text.toString().trim()
 
-            val emailText = email.text.toString().trim()
-            val passwordText = password.text.toString().trim()
-
-            if (emailText.isEmpty() || passwordText.isEmpty()) {
-                Toast.makeText(this, "Enter all fields", Toast.LENGTH_SHORT).show()
+            if (email.isEmpty() || password.isEmpty()) {
+                Toast.makeText(this, "Enter email and password", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
-            auth.signInWithEmailAndPassword(emailText, passwordText)
+            if (password.length < 6) {
+                Toast.makeText(this, "Password must be at least 6 characters", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+
+            btnLogin.isEnabled = false
+            btnLogin.text = "Please wait..."
+
+            // Try login first
+            auth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener { task ->
-
                     if (task.isSuccessful) {
-
-                        val intent = Intent(this, HomeActivity::class.java)
-                        startActivity(intent)
-                        finish()
-
+                        Toast.makeText(this, "Login successful!", Toast.LENGTH_SHORT).show()
+                        goToHome()
                     } else {
-
-                        Toast.makeText(
-                            this,
-                            "Login Failed: ${task.exception?.message}",
-                            Toast.LENGTH_SHORT
-                        ).show()
+                        // Account doesn't exist — auto create it
+                        auth.createUserWithEmailAndPassword(email, password)
+                            .addOnCompleteListener { regTask ->
+                                btnLogin.isEnabled = true
+                                btnLogin.text = "Login / Register"
+                                if (regTask.isSuccessful) {
+                                    Toast.makeText(
+                                        this,
+                                        "Account created! Welcome 🎓",
+                                        Toast.LENGTH_SHORT
+                                    ).show()
+                                    goToHome()
+                                } else {
+                                    Toast.makeText(
+                                        this,
+                                        "Error: ${task.exception?.message}",
+                                        Toast.LENGTH_LONG
+                                    ).show()
+                                }
+                            }
                     }
                 }
         }
+    }
+
+    private fun goToHome() {
+        val intent = Intent(this, HomeActivity::class.java)
+        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+        startActivity(intent)
+        finish()
     }
 }

@@ -11,105 +11,154 @@
         android:gravity="center_horizontal"
         android:padding="30dp">
 
-        <!-- TOP SPACE -->
-        <Space
-            android:layout_width="wrap_content"
-            android:layout_height="40dp"/>
+        <!-- ── LANGUAGE SELECTOR (TOP RIGHT) ─────────────────────── -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="end"
+            android:layout_marginBottom="10dp">
 
-        <!-- LOGO IMAGE -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="🌐"
+                android:textSize="16sp"
+                android:gravity="center_vertical"
+                android:layout_marginEnd="6dp"
+                android:textColor="#555555"/>
+
+            <!-- ENGLISH BUTTON -->
+            <TextView
+                android:id="@+id/btnLangEnglish"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:text="English"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:textColor="#FFFFFF"
+                android:background="#0D47A1"
+                android:paddingStart="14dp"
+                android:paddingEnd="14dp"
+                android:gravity="center"
+                android:clickable="true"
+                android:focusable="true"
+                android:layout_marginEnd="6dp"/>
+
+            <!-- KANNADA BUTTON -->
+            <TextView
+                android:id="@+id/btnLangKannada"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:text="ಕನ್ನಡ"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:textColor="#0D47A1"
+                android:background="#E3F2FD"
+                android:paddingStart="14dp"
+                android:paddingEnd="14dp"
+                android:gravity="center"
+                android:clickable="true"
+                android:focusable="true"/>
+
+        </LinearLayout>
+
+        <!-- ── LOGO ───────────────────────────────────────────────── -->
         <ImageView
-            android:layout_width="180dp"
-            android:layout_height="180dp"
+            android:layout_width="160dp"
+            android:layout_height="160dp"
             android:src="@drawable/logo"
             android:scaleType="fitCenter"
-            android:contentDescription="Nimma Guru Logo"/>
+            android:contentDescription="Nimma Guru Logo"
+            android:layout_marginTop="10dp"/>
 
         <!-- APP NAME -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:id="@+id/tvAppName"
             android:text="Nimma-Guru"
             android:textColor="#0D2C91"
             android:textStyle="bold"
-            android:textSize="38sp"
-            android:layout_marginTop="16dp"/>
+            android:textSize="36sp"
+            android:layout_marginTop="14dp"/>
 
-        <!-- TAGLINE ENGLISH -->
+        <!-- TAGLINE -->
         <TextView
+            android:id="@+id/tvTagline"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Knowledge Sharing for Every Village"
             android:textColor="#555555"
-            android:textSize="16sp"
+            android:textSize="15sp"
             android:gravity="center"
-            android:layout_marginTop="8dp"/>
+            android:layout_marginTop="6dp"/>
 
-        <!-- TAGLINE KANNADA -->
+        <!-- KANNADA TAGLINE -->
         <TextView
+            android:id="@+id/tvKannadaTagline"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="ಪ್ರತಿ ಹಳ್ಳಿಗೂ ಜ್ಞಾನದ ಹಂಚಿಕೆ"
             android:textColor="#0D2C91"
             android:textStyle="bold"
-            android:textSize="18sp"
-            android:layout_marginTop="8dp"/>
+            android:textSize="17sp"
+            android:layout_marginTop="6dp"/>
 
         <!-- DIVIDER -->
         <View
             android:layout_width="60dp"
             android:layout_height="3dp"
             android:background="#0D47A1"
-            android:layout_marginTop="30dp"
-            android:layout_marginBottom="30dp"/>
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="24dp"/>
 
-        <!-- WHO ARE YOU LABEL -->
+        <!-- WHO ARE YOU -->
         <TextView
+            android:id="@+id/tvWhoAreYou"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Who are you?"
             android:textColor="#333333"
             android:textStyle="bold"
             android:textSize="20sp"
-            android:layout_marginBottom="20dp"/>
+            android:layout_marginBottom="18dp"/>
 
-        <!-- STUDENT LOGIN BUTTON -->
+        <!-- STUDENT BUTTON -->
         <Button
             android:id="@+id/btnStudent"
             android:layout_width="match_parent"
-            android:layout_height="60dp"
+            android:layout_height="58dp"
             android:text="🎓  I am a Student"
-            android:textSize="18sp"
+            android:textSize="17sp"
             android:textStyle="bold"
             android:backgroundTint="#0D47A1"
             android:textColor="#FFFFFF"
-            android:layout_marginBottom="16dp"/>
+            android:layout_marginBottom="14dp"/>
 
-        <!-- GURU LOGIN BUTTON -->
+        <!-- GURU BUTTON -->
         <Button
             android:id="@+id/btnGuru"
             android:layout_width="match_parent"
-            android:layout_height="60dp"
+            android:layout_height="58dp"
             android:text="👨‍🏫  I am a Guru"
-            android:textSize="18sp"
+            android:textSize="17sp"
             android:textStyle="bold"
             android:backgroundTint="#F4B400"
             android:textColor="#FFFFFF"
-            android:layout_marginBottom="20dp"/>
+            android:layout_marginBottom="18dp"/>
 
-        <!-- REGISTER LINK -->
+        <!-- REGISTER -->
         <TextView
             android:id="@+id/txtRegister"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="New User? Register Here"
-            android:textSize="15sp"
+            android:textSize="14sp"
             android:textColor="#0D47A1"
-            android:textStyle="bold"
-            android:layout_marginTop="8dp"/>
+            android:textStyle="bold"/>
 
-        <Space
-            android:layout_width="wrap_content"
-            android:layout_height="30dp"/>
+        <Space android:layout_width="wrap_content" android:layout_height="30dp"/>
 
     </LinearLayout>
 

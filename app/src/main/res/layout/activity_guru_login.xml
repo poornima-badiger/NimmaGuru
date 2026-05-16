@@ -1,43 +1,136 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="25dp"
-    android:gravity="center"
-    android:background="#F5F7FA">
+    android:background="#FFFDF0">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Guru Login"
-        android:textSize="28sp"
-        android:textStyle="bold"
-        android:textColor="#F4B400"/>
+        android:orientation="vertical"
+        android:padding="30dp"
+        android:gravity="center_horizontal">
 
-    <EditText
-        android:id="@+id/etGuruEmail"
-        android:layout_width="match_parent"
-        android:layout_height="55dp"
-        android:hint="Guru Email"
-        android:layout_marginTop="30dp"/>
+        <Space android:layout_width="wrap_content" android:layout_height="30dp"/>
 
-    <EditText
-        android:id="@+id/etGuruPassword"
-        android:layout_width="match_parent"
-        android:layout_height="55dp"
-        android:hint="Password"
-        android:inputType="textPassword"
-        android:layout_marginTop="15dp"/>
+        <!-- ICON -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="👨‍🏫"
+            android:textSize="64sp"
+            android:layout_marginBottom="10dp"/>
 
-    <Button
-        android:id="@+id/btnGuruLogin"
-        android:layout_width="match_parent"
-        android:layout_height="55dp"
-        android:text="Login"
-        android:textStyle="bold"
-        android:textColor="#FFFFFF"
-        android:backgroundTint="#F4B400"
-        android:layout_marginTop="25dp"/>
+        <!-- TITLE -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Guru Login"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:textColor="#E65100"
+            android:layout_marginBottom="6dp"/>
 
-</LinearLayout>
+        <!-- SUBTITLE -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Welcome! Login to manage your profile"
+            android:textSize="15sp"
+            android:textColor="#666666"
+            android:layout_marginBottom="6dp"/>
+
+        <!-- KANNADA -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ಗುರು ಲಾಗಿನ್"
+            android:textSize="16sp"
+            android:textColor="#F4B400"
+            android:textStyle="bold"
+            android:layout_marginBottom="30dp"/>
+
+        <!-- DIVIDER -->
+        <View
+            android:layout_width="60dp"
+            android:layout_height="3dp"
+            android:background="#F4B400"
+            android:layout_marginBottom="30dp"/>
+
+        <!-- EMAIL -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Email Address"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:textColor="#333333"
+            android:layout_marginBottom="6dp"/>
+
+        <EditText
+            android:id="@+id/etGuruEmail"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:hint="Enter your email"
+            android:background="#FFFFFF"
+            android:padding="15dp"
+            android:inputType="textEmailAddress"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- PASSWORD -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Password"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:textColor="#333333"
+            android:layout_marginBottom="6dp"/>
+
+        <EditText
+            android:id="@+id/etGuruPassword"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:hint="Enter your password"
+            android:background="#FFFFFF"
+            android:padding="15dp"
+            android:inputType="textPassword"
+            android:layout_marginBottom="25dp"/>
+
+        <!-- LOGIN BUTTON -->
+        <Button
+            android:id="@+id/btnGuruLogin"
+            android:layout_width="match_parent"
+            android:layout_height="58dp"
+            android:text="Login / Register"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#F4B400"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- SKIP BUTTON -->
+        <Button
+            android:id="@+id/btnGuruSkip"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:text="Continue as Guest (Skip Login)"
+            android:textSize="15sp"
+            android:textColor="#E65100"
+            android:backgroundTint="#FFF3E0"
+            android:layout_marginBottom="10dp"/>
+
+        <!-- HINT -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Login creates your Guru account automatically if new"
+            android:textSize="12sp"
+            android:textColor="#999999"
+            android:gravity="center"/>
+
+        <Space android:layout_width="wrap_content" android:layout_height="30dp"/>
+
+    </LinearLayout>
+
+</ScrollView>

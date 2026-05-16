@@ -11,53 +11,84 @@ import com.google.firebase.firestore.FirebaseFirestore
 
 class GuruProfileSetupActivity : AppCompatActivity() {
 
+    private val db = FirebaseFirestore.getInstance()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_guru_profile_setup)
 
-        val edtName = findViewById<EditText>(R.id.edtName)
-        val edtSubject = findViewById<EditText>(R.id.edtSubject)
-        val edtTime = findViewById<EditText>(R.id.edtTime)
+        val edtName     = findViewById<EditText>(R.id.edtName)
+        val edtSubject  = findViewById<EditText>(R.id.edtSubject)
+        val edtTime     = findViewById<EditText>(R.id.edtTime)
         val edtLocation = findViewById<EditText>(R.id.edtLocation)
+        val btnSave     = findViewById<Button>(R.id.btnSaveGuru)
+        val btnGoHome   = findViewById<Button>(R.id.btnGoHome)
 
-        val btnSave = findViewById<Button>(R.id.btnSaveGuru)
+        // Go to Home without saving
+        btnGoHome.setOnClickListener {
+            startActivity(Intent(this, HomeActivity::class.java))
+            finish()
+        }
 
+        // Save profile to Firestore
         btnSave.setOnClickListener {
 
-            val db = FirebaseFirestore.getInstance()
+            val name     = edtName.text.toString().trim()
+            val subject  = edtSubject.text.toString().trim()
+            val time     = edtTime.text.toString().trim()
+            val location = edtLocation.text.toString().trim()
 
-            val name = edtName.text.toString()
-            val subject = edtSubject.text.toString()
-            val time = edtTime.text.toString()
-            val location = edtLocation.text.toString()
+            // Validation
+            if (name.isEmpty()) {
+                edtName.error = "Please enter your name"
+                edtName.requestFocus()
+                return@setOnClickListener
+            }
+            if (subject.isEmpty()) {
+                edtSubject.error = "Please enter your subject"
+                edtSubject.requestFocus()
+                return@setOnClickListener
+            }
+            if (time.isEmpty()) {
+                edtTime.error = "Please enter your free hours"
+                edtTime.requestFocus()
+                return@setOnClickListener
+            }
+            if (location.isEmpty()) {
+                edtLocation.error = "Please enter your village/location"
+                edtLocation.requestFocus()
+                return@setOnClickListener
+            }
+
+            btnSave.isEnabled = false
+            btnSave.text = "Saving..."
 
             val guru = hashMapOf(
-                "name" to name,
-                "subject" to subject,
-                "time" to time,
+                "name"     to name,
+                "subject"  to subject,
+                "time"     to time,
                 "location" to location,
-                "image" to "https://i.pravatar.cc/150?img=3"
+                "image"    to "https://i.pravatar.cc/150?img=3"
             )
+
             db.collection("gurus")
                 .add(guru)
                 .addOnSuccessListener {
-
                     Toast.makeText(
                         this,
-                        "Guru Saved Successfully",
-                        Toast.LENGTH_SHORT
+                        "Profile saved! Welcome, $name 🎉",
+                        Toast.LENGTH_LONG
                     ).show()
-
                     startActivity(Intent(this, HomeActivity::class.java))
-
                     finish()
                 }
-                .addOnFailureListener {
-
+                .addOnFailureListener { e ->
+                    btnSave.isEnabled = true
+                    btnSave.text = "✅  Save Guru Profile"
                     Toast.makeText(
                         this,
-                        "Save Failed",
-                        Toast.LENGTH_SHORT
+                        "Save failed: ${e.message}",
+                        Toast.LENGTH_LONG
                     ).show()
                 }
         }

@@ -1,6 +1,23 @@
 <resources>
     <string name="app_name">NimmaGuru</string>
 
+    <!-- Login Page -->
+    <string name="login_app_name">Nimma-Guru</string>
+    <string name="login_tagline">Knowledge Sharing for Every Village</string>
+    <string name="login_kannada_tagline">ಪ್ರತಿ ಹಳ್ಳಿಗೂ ಜ್ಞಾನದ ಹಂಚಿಕೆ</string>
+    <string name="login_who_are_you">Who are you?</string>
+    <string name="login_student_btn">🎓  I am a Student</string>
+    <string name="login_guru_btn">👨‍🏫  I am a Guru</string>
+    <string name="login_register">New User? Register Here</string>
+
+    <!-- Student Login -->
+    <string name="student_login_title">Student Login</string>
+    <string name="student_login_subtitle">Welcome back! Login to continue</string>
+    <string name="student_email_hint">Email Address</string>
+    <string name="student_password_hint">Password</string>
+    <string name="student_login_btn">Login / Register</string>
+    <string name="student_skip_btn">Continue as Guest (Skip Login)</string>
+
     <!-- Home Screen -->
     <string name="home_title">Nimma Guru</string>
     <string name="home_subtitle">Community Mentorship App</string>

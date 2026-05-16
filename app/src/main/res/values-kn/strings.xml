@@ -1,6 +1,23 @@
 <resources>
     <string name="app_name">ನಿಮ್ಮ ಗುರು</string>
 
+    <!-- Login Page -->
+    <string name="login_app_name">ನಿಮ್ಮ-ಗುರು</string>
+    <string name="login_tagline">ಪ್ರತಿ ಹಳ್ಳಿಗೂ ಜ್ಞಾನದ ಹಂಚಿಕೆ</string>
+    <string name="login_kannada_tagline">Knowledge Sharing for Every Village</string>
+    <string name="login_who_are_you">ನೀವು ಯಾರು?</string>
+    <string name="login_student_btn">🎓  ನಾನು ವಿದ್ಯಾರ್ಥಿ</string>
+    <string name="login_guru_btn">👨‍🏫  ನಾನು ಗುರು</string>
+    <string name="login_register">ಹೊಸ ಬಳಕೆದಾರರೇ? ನೋಂದಾಯಿಸಿ</string>
+
+    <!-- Student Login -->
+    <string name="student_login_title">ವಿದ್ಯಾರ್ಥಿ ಲಾಗಿನ್</string>
+    <string name="student_login_subtitle">ಸ್ವಾಗತ! ಮುಂದುವರಿಯಲು ಲಾಗಿನ್ ಮಾಡಿ</string>
+    <string name="student_email_hint">ಇಮೇಲ್ ವಿಳಾಸ</string>
+    <string name="student_password_hint">ಪಾಸ್‌ವರ್ಡ್</string>
+    <string name="student_login_btn">ಲಾಗಿನ್ / ನೋಂದಣಿ</string>
+    <string name="student_skip_btn">ಅತಿಥಿಯಾಗಿ ಮುಂದುವರಿಯಿರಿ</string>
+
     <!-- Home Screen -->
     <string name="home_title">ನಿಮ್ಮ ಗುರು</string>
     <string name="home_subtitle">ಸಮುದಾಯ ಮಾರ್ಗದರ್ಶನ ಅಪ್ಲಿಕೇಶನ್</string>

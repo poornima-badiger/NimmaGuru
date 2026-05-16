@@ -19,12 +19,19 @@ class GuruLoginActivity : AppCompatActivity() {
 
         auth = FirebaseAuth.getInstance()
 
-        val etEmail = findViewById<EditText>(R.id.etGuruEmail)
+        val etEmail    = findViewById<EditText>(R.id.etGuruEmail)
         val etPassword = findViewById<EditText>(R.id.etGuruPassword)
-        val btnLogin = findViewById<Button>(R.id.btnGuruLogin)
+        val btnLogin   = findViewById<Button>(R.id.btnGuruLogin)
+        val btnSkip    = findViewById<Button>(R.id.btnGuruSkip)
 
+        // SKIP — go directly to Guru Profile Setup
+        btnSkip.setOnClickListener {
+            goToGuruHome()
+        }
+
+        // LOGIN / AUTO-REGISTER
         btnLogin.setOnClickListener {
-            val email = etEmail.text.toString().trim()
+            val email    = etEmail.text.toString().trim()
             val password = etPassword.text.toString().trim()
 
             if (email.isEmpty() || password.isEmpty()) {
@@ -32,30 +39,37 @@ class GuruLoginActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
 
-            // Try login first; if no account, register automatically
+            if (password.length < 6) {
+                Toast.makeText(this, "Password must be at least 6 characters", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+
+            btnLogin.isEnabled = false
+            btnLogin.text = "Please wait..."
+
+            // Try login first
             auth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener { task ->
                     if (task.isSuccessful) {
-                        startActivity(Intent(this, GuruProfileSetupActivity::class.java))
-                        finish()
+                        Toast.makeText(this, "Welcome back, Guru! 👨‍🏫", Toast.LENGTH_SHORT).show()
+                        goToGuruHome()
                     } else {
-                        // Account doesn't exist — create one
+                        // Account doesn't exist — auto create
                         auth.createUserWithEmailAndPassword(email, password)
                             .addOnCompleteListener { regTask ->
+                                btnLogin.isEnabled = true
+                                btnLogin.text = "Login / Register"
                                 if (regTask.isSuccessful) {
                                     Toast.makeText(
                                         this,
-                                        "Guru account created!",
+                                        "Guru account created! 🎉",
                                         Toast.LENGTH_SHORT
                                     ).show()
-                                    startActivity(
-                                        Intent(this, GuruProfileSetupActivity::class.java)
-                                    )
-                                    finish()
+                                    goToGuruHome()
                                 } else {
                                     Toast.makeText(
                                         this,
-                                        "Login Failed: ${task.exception?.message}",
+                                        "Error: ${task.exception?.message}",
                                         Toast.LENGTH_LONG
                                     ).show()
                                 }
@@ -63,5 +77,12 @@ class GuruLoginActivity : AppCompatActivity() {
                     }
                 }
         }
+    }
+
+    private fun goToGuruHome() {
+        val intent = Intent(this, GuruProfileSetupActivity::class.java)
+        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+        startActivity(intent)
+        finish()
     }
 }

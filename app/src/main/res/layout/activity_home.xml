@@ -1,18 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="#F5F7FA">
 
-    <!-- TOP HEADER BAR -->
+    <!-- HEADER -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#0D47A1"
         android:orientation="horizontal"
-        android:padding="16dp"
+        android:padding="14dp"
         android:gravity="center_vertical">
 
         <LinearLayout
@@ -24,165 +23,232 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/home_title"
-                android:textSize="24sp"
+                android:text="Nimma Guru"
+                android:textSize="22sp"
                 android:textStyle="bold"
                 android:textColor="#FFFFFF"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/home_subtitle"
-                android:textSize="13sp"
+                android:text="Community Mentorship App"
+                android:textSize="12sp"
                 android:textColor="#BBDEFB"/>
         </LinearLayout>
 
-        <Button
+        <TextView
             android:id="@+id/btnNavNotifications"
-            android:layout_width="wrap_content"
-            android:layout_height="36dp"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
             android:text="🔔"
-            android:textSize="18sp"
-            android:backgroundTint="@android:color/transparent"
-            android:textColor="#FFFFFF"/>
+            android:textSize="20sp"
+            android:gravity="center"
+            android:clickable="true"
+            android:focusable="true"/>
 
-        <Button
+        <TextView
             android:id="@+id/btnNavSettings"
-            android:layout_width="wrap_content"
-            android:layout_height="36dp"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
             android:text="⚙️"
-            android:textSize="18sp"
-            android:backgroundTint="@android:color/transparent"
-            android:textColor="#FFFFFF"/>
+            android:textSize="20sp"
+            android:gravity="center"
+            android:clickable="true"
+            android:focusable="true"/>
     </LinearLayout>
 
-    <!-- QUICK NAV BUTTONS ROW -->
+    <!-- NAV ROW -->
     <HorizontalScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#FFFFFF"
-        android:elevation="4dp">
+        android:scrollbars="none">
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:padding="10dp">
+            android:padding="8dp">
 
-            <Button
+            <TextView
                 android:id="@+id/btnNavSearch"
                 android:layout_width="wrap_content"
-                android:layout_height="40dp"
+                android:layout_height="36dp"
                 android:text="🔍 Search"
                 android:textSize="13sp"
                 android:textColor="#0D47A1"
-                android:backgroundTint="#E3F2FD"
-                android:layout_marginEnd="8dp"/>
+                android:background="#E3F2FD"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
+                android:gravity="center"
+                android:layout_marginEnd="8dp"
+                android:clickable="true"
+                android:focusable="true"/>
 
-            <Button
+            <TextView
                 android:id="@+id/btnNavCalendar"
                 android:layout_width="wrap_content"
-                android:layout_height="40dp"
+                android:layout_height="36dp"
                 android:text="📅 Calendar"
                 android:textSize="13sp"
                 android:textColor="#0D47A1"
-                android:backgroundTint="#E3F2FD"
-                android:layout_marginEnd="8dp"/>
+                android:background="#E3F2FD"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
+                android:gravity="center"
+                android:layout_marginEnd="8dp"
+                android:clickable="true"
+                android:focusable="true"/>
 
-            <Button
+            <TextView
                 android:id="@+id/btnNavAppreciation"
                 android:layout_width="wrap_content"
-                android:layout_height="40dp"
+                android:layout_height="36dp"
                 android:text="🌟 Wall of Fame"
                 android:textSize="13sp"
                 android:textColor="#0D47A1"
-                android:backgroundTint="#E3F2FD"
-                android:layout_marginEnd="8dp"/>
+                android:background="#E3F2FD"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
+                android:gravity="center"
+                android:layout_marginEnd="8dp"
+                android:clickable="true"
+                android:focusable="true"/>
 
-            <Button
+            <TextView
                 android:id="@+id/btnNavAI"
                 android:layout_width="wrap_content"
-                android:layout_height="40dp"
+                android:layout_height="36dp"
                 android:text="🤖 AI Assistant"
                 android:textSize="13sp"
                 android:textColor="#FFFFFF"
-                android:backgroundTint="#F4B400"
-                android:layout_marginEnd="8dp"/>
+                android:background="#F4B400"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
+                android:gravity="center"
+                android:clickable="true"
+                android:focusable="true"/>
 
         </LinearLayout>
     </HorizontalScrollView>
 
-    <!-- CHIP FILTERS -->
-    <com.google.android.material.chip.ChipGroup
-        android:id="@+id/chipGroup"
+    <!-- SUBJECT FILTER ROW -->
+    <HorizontalScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingStart="12dp"
-        android:paddingEnd="12dp"
-        android:paddingTop="8dp"
-        android:paddingBottom="4dp"
-        app:singleSelection="true">
+        android:background="#FAFAFA"
+        android:scrollbars="none">
 
-        <com.google.android.material.chip.Chip
-            android:id="@+id/chipAll"
-            android:text="@string/chip_all"
-            style="@style/Widget.MaterialComponents.Chip.Choice"
-            app:chipBackgroundColor="#E3F2FD"/>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="8dp">
 
-        <com.google.android.material.chip.Chip
-            android:id="@+id/chipMath"
-            android:text="@string/chip_math"
-            style="@style/Widget.MaterialComponents.Chip.Choice"
-            app:chipBackgroundColor="#E3F2FD"/>
+            <TextView
+                android:id="@+id/chipAll"
+                android:layout_width="wrap_content"
+                android:layout_height="34dp"
+                android:text="All"
+                android:textSize="13sp"
+                android:textColor="#FFFFFF"
+                android:background="#0D47A1"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:gravity="center"
+                android:layout_marginEnd="8dp"
+                android:clickable="true"
+                android:focusable="true"/>
 
-        <com.google.android.material.chip.Chip
-            android:id="@+id/chipScience"
-            android:text="@string/chip_science"
-            style="@style/Widget.MaterialComponents.Chip.Choice"
-            app:chipBackgroundColor="#E3F2FD"/>
+            <TextView
+                android:id="@+id/chipMath"
+                android:layout_width="wrap_content"
+                android:layout_height="34dp"
+                android:text="Math"
+                android:textSize="13sp"
+                android:textColor="#0D47A1"
+                android:background="#E3F2FD"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:gravity="center"
+                android:layout_marginEnd="8dp"
+                android:clickable="true"
+                android:focusable="true"/>
 
-        <com.google.android.material.chip.Chip
-            android:id="@+id/chipEnglish"
-            android:text="@string/chip_english"
-            style="@style/Widget.MaterialComponents.Chip.Choice"
-            app:chipBackgroundColor="#E3F2FD"/>
+            <TextView
+                android:id="@+id/chipScience"
+                android:layout_width="wrap_content"
+                android:layout_height="34dp"
+                android:text="Science"
+                android:textSize="13sp"
+                android:textColor="#0D47A1"
+                android:background="#E3F2FD"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:gravity="center"
+                android:layout_marginEnd="8dp"
+                android:clickable="true"
+                android:focusable="true"/>
 
-        <com.google.android.material.chip.Chip
-            android:id="@+id/chipComputer"
-            android:text="@string/chip_computer"
-            style="@style/Widget.MaterialComponents.Chip.Choice"
-            app:chipBackgroundColor="#E3F2FD"/>
+            <TextView
+                android:id="@+id/chipEnglish"
+                android:layout_width="wrap_content"
+                android:layout_height="34dp"
+                android:text="English"
+                android:textSize="13sp"
+                android:textColor="#0D47A1"
+                android:background="#E3F2FD"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:gravity="center"
+                android:layout_marginEnd="8dp"
+                android:clickable="true"
+                android:focusable="true"/>
 
-    </com.google.android.material.chip.ChipGroup>
+            <TextView
+                android:id="@+id/chipComputer"
+                android:layout_width="wrap_content"
+                android:layout_height="34dp"
+                android:text="Computer"
+                android:textSize="13sp"
+                android:textColor="#0D47A1"
+                android:background="#E3F2FD"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:gravity="center"
+                android:clickable="true"
+                android:focusable="true"/>
+
+        </LinearLayout>
+    </HorizontalScrollView>
 
     <!-- SEARCH BAR -->
     <EditText
         android:id="@+id/etSearchGuru"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:hint="@string/search_hint"
+        android:hint="Search Guru Name or Subject"
         android:background="#FFFFFF"
-        android:padding="14dp"
+        android:paddingStart="14dp"
+        android:paddingEnd="14dp"
         android:layout_marginStart="12dp"
         android:layout_marginEnd="12dp"
         android:layout_marginTop="8dp"
-        android:layout_marginBottom="4dp"
-        android:drawableStart="@android:drawable/ic_menu_search"
-        android:drawablePadding="8dp"/>
+        android:layout_marginBottom="4dp"/>
 
-    <!-- SECTION LABEL -->
+    <!-- LABEL -->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/nearby_gurus"
+        android:text="Nearby Gurus"
         android:textStyle="bold"
-        android:textSize="18sp"
+        android:textSize="17sp"
         android:textColor="#0D47A1"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="6dp"
         android:layout_marginBottom="4dp"/>
 
-    <!-- GURU CARDS SCROLL -->
+    <!-- GURU LIST -->
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -194,6 +260,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"/>
+
     </ScrollView>
 
 </LinearLayout>
