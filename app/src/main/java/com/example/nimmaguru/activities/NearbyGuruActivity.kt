@@ -10,7 +10,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.nimmaguru.R
 import com.google.firebase.firestore.FirebaseFirestore
 
-class NearbyGuruActivity : AppCompatActivity() {
+class NearbyGuruActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

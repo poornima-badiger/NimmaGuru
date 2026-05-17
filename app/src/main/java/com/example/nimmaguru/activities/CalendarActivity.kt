@@ -11,7 +11,7 @@ import com.example.nimmaguru.R
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.Query
 
-class CalendarActivity : AppCompatActivity() {
+class CalendarActivity : BaseActivity() {
 
     private lateinit var container: LinearLayout
     private lateinit var tvEmpty: TextView

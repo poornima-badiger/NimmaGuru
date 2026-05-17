@@ -3,9 +3,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#F5F7FA">
+    android:background="#F0F4FF">
 
-    <!-- HEADER -->
+    <!-- ── HEADER ─────────────────────────────────────────────────── -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -31,8 +31,8 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Community Mentorship App"
-                android:textSize="12sp"
+                android:text="ನಿಮ್ಮ ಗುರು • Community Mentorship"
+                android:textSize="11sp"
                 android:textColor="#BBDEFB"/>
         </LinearLayout>
 
@@ -57,12 +57,13 @@
             android:focusable="true"/>
     </LinearLayout>
 
-    <!-- NAV ROW -->
+    <!-- ── QUICK NAV ROW ──────────────────────────────────────────── -->
     <HorizontalScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#FFFFFF"
-        android:scrollbars="none">
+        android:scrollbars="none"
+        android:elevation="2dp">
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -73,13 +74,13 @@
             <TextView
                 android:id="@+id/btnNavSearch"
                 android:layout_width="wrap_content"
-                android:layout_height="36dp"
+                android:layout_height="38dp"
                 android:text="🔍 Search"
                 android:textSize="13sp"
                 android:textColor="#0D47A1"
                 android:background="#E3F2FD"
-                android:paddingStart="12dp"
-                android:paddingEnd="12dp"
+                android:paddingStart="14dp"
+                android:paddingEnd="14dp"
                 android:gravity="center"
                 android:layout_marginEnd="8dp"
                 android:clickable="true"
@@ -88,13 +89,13 @@
             <TextView
                 android:id="@+id/btnNavCalendar"
                 android:layout_width="wrap_content"
-                android:layout_height="36dp"
+                android:layout_height="38dp"
                 android:text="📅 Calendar"
                 android:textSize="13sp"
                 android:textColor="#0D47A1"
                 android:background="#E3F2FD"
-                android:paddingStart="12dp"
-                android:paddingEnd="12dp"
+                android:paddingStart="14dp"
+                android:paddingEnd="14dp"
                 android:gravity="center"
                 android:layout_marginEnd="8dp"
                 android:clickable="true"
@@ -103,13 +104,13 @@
             <TextView
                 android:id="@+id/btnNavAppreciation"
                 android:layout_width="wrap_content"
-                android:layout_height="36dp"
+                android:layout_height="38dp"
                 android:text="🌟 Wall of Fame"
                 android:textSize="13sp"
                 android:textColor="#0D47A1"
                 android:background="#E3F2FD"
-                android:paddingStart="12dp"
-                android:paddingEnd="12dp"
+                android:paddingStart="14dp"
+                android:paddingEnd="14dp"
                 android:gravity="center"
                 android:layout_marginEnd="8dp"
                 android:clickable="true"
@@ -118,13 +119,28 @@
             <TextView
                 android:id="@+id/btnNavAI"
                 android:layout_width="wrap_content"
-                android:layout_height="36dp"
+                android:layout_height="38dp"
                 android:text="🤖 AI Assistant"
                 android:textSize="13sp"
                 android:textColor="#FFFFFF"
                 android:background="#F4B400"
-                android:paddingStart="12dp"
-                android:paddingEnd="12dp"
+                android:paddingStart="14dp"
+                android:paddingEnd="14dp"
+                android:gravity="center"
+                android:layout_marginEnd="8dp"
+                android:clickable="true"
+                android:focusable="true"/>
+
+            <TextView
+                android:id="@+id/btnNavStudentProfile"
+                android:layout_width="wrap_content"
+                android:layout_height="38dp"
+                android:text="👤 My Profile"
+                android:textSize="13sp"
+                android:textColor="#0D47A1"
+                android:background="#E3F2FD"
+                android:paddingStart="14dp"
+                android:paddingEnd="14dp"
                 android:gravity="center"
                 android:clickable="true"
                 android:focusable="true"/>
@@ -132,7 +148,7 @@
         </LinearLayout>
     </HorizontalScrollView>
 
-    <!-- SUBJECT FILTER ROW -->
+    <!-- ── SUBJECT FILTER ROW ─────────────────────────────────────── -->
     <HorizontalScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -164,12 +180,12 @@
                 android:id="@+id/chipMath"
                 android:layout_width="wrap_content"
                 android:layout_height="34dp"
-                android:text="Math"
+                android:text="📐 Math"
                 android:textSize="13sp"
                 android:textColor="#0D47A1"
                 android:background="#E3F2FD"
-                android:paddingStart="16dp"
-                android:paddingEnd="16dp"
+                android:paddingStart="14dp"
+                android:paddingEnd="14dp"
                 android:gravity="center"
                 android:layout_marginEnd="8dp"
                 android:clickable="true"
@@ -179,12 +195,12 @@
                 android:id="@+id/chipScience"
                 android:layout_width="wrap_content"
                 android:layout_height="34dp"
-                android:text="Science"
+                android:text="🔬 Science"
                 android:textSize="13sp"
                 android:textColor="#0D47A1"
                 android:background="#E3F2FD"
-                android:paddingStart="16dp"
-                android:paddingEnd="16dp"
+                android:paddingStart="14dp"
+                android:paddingEnd="14dp"
                 android:gravity="center"
                 android:layout_marginEnd="8dp"
                 android:clickable="true"
@@ -194,12 +210,12 @@
                 android:id="@+id/chipEnglish"
                 android:layout_width="wrap_content"
                 android:layout_height="34dp"
-                android:text="English"
+                android:text="📖 English"
                 android:textSize="13sp"
                 android:textColor="#0D47A1"
                 android:background="#E3F2FD"
-                android:paddingStart="16dp"
-                android:paddingEnd="16dp"
+                android:paddingStart="14dp"
+                android:paddingEnd="14dp"
                 android:gravity="center"
                 android:layout_marginEnd="8dp"
                 android:clickable="true"
@@ -209,12 +225,27 @@
                 android:id="@+id/chipComputer"
                 android:layout_width="wrap_content"
                 android:layout_height="34dp"
-                android:text="Computer"
+                android:text="💻 Computer"
                 android:textSize="13sp"
                 android:textColor="#0D47A1"
                 android:background="#E3F2FD"
-                android:paddingStart="16dp"
-                android:paddingEnd="16dp"
+                android:paddingStart="14dp"
+                android:paddingEnd="14dp"
+                android:gravity="center"
+                android:layout_marginEnd="8dp"
+                android:clickable="true"
+                android:focusable="true"/>
+
+            <TextView
+                android:id="@+id/chipCarpentry"
+                android:layout_width="wrap_content"
+                android:layout_height="34dp"
+                android:text="🔨 Carpentry"
+                android:textSize="13sp"
+                android:textColor="#0D47A1"
+                android:background="#E3F2FD"
+                android:paddingStart="14dp"
+                android:paddingEnd="14dp"
                 android:gravity="center"
                 android:clickable="true"
                 android:focusable="true"/>
@@ -222,21 +253,22 @@
         </LinearLayout>
     </HorizontalScrollView>
 
-    <!-- SEARCH BAR -->
+    <!-- ── SEARCH BAR ─────────────────────────────────────────────── -->
     <EditText
         android:id="@+id/etSearchGuru"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:hint="Search Guru Name or Subject"
+        android:hint="🔍  Search by name, subject or village..."
         android:background="#FFFFFF"
-        android:paddingStart="14dp"
-        android:paddingEnd="14dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
         android:layout_marginStart="12dp"
         android:layout_marginEnd="12dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="4dp"/>
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="4dp"
+        android:textSize="14sp"/>
 
-    <!-- LABEL -->
+    <!-- ── SECTION LABEL ──────────────────────────────────────────── -->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -245,10 +277,10 @@
         android:textSize="17sp"
         android:textColor="#0D47A1"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="6dp"
+        android:layout_marginTop="8dp"
         android:layout_marginBottom="4dp"/>
 
-    <!-- GURU LIST -->
+    <!-- ── GURU LIST ──────────────────────────────────────────────── -->
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -260,7 +292,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"/>
-
     </ScrollView>
 
 </LinearLayout>

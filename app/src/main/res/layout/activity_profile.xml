@@ -1,100 +1,243 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F5F7FA">
+    android:orientation="vertical"
+    android:background="#F0F4FF">
 
+    <!-- HEADER BAR -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="25dp"
-        android:gravity="center_horizontal">
+        android:background="#0D47A1"
+        android:orientation="horizontal"
+        android:padding="14dp"
+        android:gravity="center_vertical">
 
-        <!-- GURU IMAGE -->
-
-        <ImageView
-            android:layout_width="120dp"
-            android:layout_height="120dp"
-            android:src="@mipmap/ic_launcher"
-            android:layout_marginTop="20dp"/>
-
-        <!-- NAME -->
-
-        <TextView
-            android:id="@+id/tvGuruName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Guru Name"
-            android:textSize="28sp"
-            android:textStyle="bold"
-            android:textColor="#0D47A1"
-            android:layout_marginTop="20dp"/>
-        <TextView
-            android:id="@+id/tvGuruDescription"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Experienced teacher helping village students."
-            android:textSize="15sp"
-            android:textColor="#555"
-            android:paddingTop="8dp"
-            android:paddingBottom="8dp"/>
-
-
-        <!-- SUBJECT -->
+        <ImageButton
+            android:id="@+id/btnBack"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@android:drawable/ic_media_previous"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:tint="#FFFFFF"
+            android:contentDescription="Back"/>
 
         <TextView
-            android:id="@+id/tvGuruSubject"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="Subject"
+            android:layout_weight="1"
+            android:text="Guru Profile"
             android:textSize="20sp"
-            android:textColor="#333333"
-            android:layout_marginTop="15dp"/>
-
-        <!-- TIME -->
-
-        <TextView
-            android:id="@+id/tvGuruTime"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Free Time"
-            android:textSize="18sp"
-            android:textColor="#666666"
-            android:layout_marginTop="10dp"/>
-
-        <!-- LOCATION -->
-
-        <TextView
-            android:id="@+id/tvLocation"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Village"
-            android:textSize="18sp"/>
-
-
-        <!-- BOOK BUTTON -->
-
-        <Button
-            android:id="@+id/btnBookSession"
-            android:layout_width="match_parent"
-            android:layout_height="55dp"
-            android:text="Book Session"
-            android:textColor="#FFFFFF"
             android:textStyle="bold"
-            android:textSize="18sp"
-            android:layout_marginTop="20dp"
-            android:background="@drawable/round_button"/>
-
-        <Button
-            android:id="@+id/btnEditProfile"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Edit Profile"
-            android:textSize="18sp"
-            android:layout_marginTop="20dp"/>
-
+            android:textColor="#FFFFFF"
+            android:layout_marginStart="10dp"/>
     </LinearLayout>
 
-</ScrollView>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- ── HERO SECTION ──────────────────────────────────── -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#0D47A1"
+                android:orientation="vertical"
+                android:gravity="center_horizontal"
+                android:paddingTop="28dp"
+                android:paddingBottom="28dp">
+
+                <!-- PROFILE PHOTO -->
+                <ImageView
+                    android:id="@+id/imgGuru"
+                    android:layout_width="110dp"
+                    android:layout_height="110dp"
+                    android:src="@drawable/guru1"
+                    android:scaleType="centerCrop"
+                    android:background="@drawable/circle_white"/>
+
+                <!-- NAME -->
+                <TextView
+                    android:id="@+id/tvGuruName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Guru Name"
+                    android:textSize="26sp"
+                    android:textStyle="bold"
+                    android:textColor="#FFFFFF"
+                    android:layout_marginTop="14dp"/>
+
+                <!-- PROFESSION -->
+                <TextView
+                    android:id="@+id/tvGuruProfession"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Profession"
+                    android:textSize="15sp"
+                    android:textColor="#BBDEFB"
+                    android:layout_marginTop="4dp"/>
+
+                <!-- SUBJECT BADGE -->
+                <TextView
+                    android:id="@+id/tvGuruSubject"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Subject"
+                    android:textSize="13sp"
+                    android:textColor="#0D47A1"
+                    android:background="#FFFFFF"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    android:paddingTop="4dp"
+                    android:paddingBottom="4dp"
+                    android:layout_marginTop="10dp"/>
+            </LinearLayout>
+
+            <!-- ── ABOUT CARD ─────────────────────────────────────── -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="16dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="5dp"
+                app:cardBackgroundColor="#FFFFFF">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="18dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="📝 About Guru"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:textColor="#0D47A1"
+                        android:layout_marginBottom="8dp"/>
+
+                    <TextView
+                        android:id="@+id/tvGuruDescription"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Experienced mentor helping students learn effectively."
+                        android:textSize="14sp"
+                        android:textColor="#444444"
+                        android:lineSpacingExtra="4dp"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- ── DETAILS CARD ───────────────────────────────────── -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="12dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="5dp"
+                app:cardBackgroundColor="#FFFFFF">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="18dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="📋 Guru Details"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:textColor="#0D47A1"
+                        android:layout_marginBottom="14dp"/>
+
+                    <!-- AGE -->
+                    <include layout="@layout/item_profile_row"
+                        android:id="@+id/rowAge"/>
+
+                    <!-- EXPERIENCE -->
+                    <include layout="@layout/item_profile_row"
+                        android:id="@+id/rowExperience"/>
+
+                    <!-- LANGUAGES -->
+                    <include layout="@layout/item_profile_row"
+                        android:id="@+id/rowLanguages"/>
+
+                    <!-- AVAILABLE DAYS -->
+                    <include layout="@layout/item_profile_row"
+                        android:id="@+id/rowAvailableDays"/>
+
+                    <!-- AVAILABLE TIME -->
+                    <include layout="@layout/item_profile_row"
+                        android:id="@+id/rowTime"/>
+
+                    <!-- TEACHING PLACE -->
+                    <include layout="@layout/item_profile_row"
+                        android:id="@+id/rowTeachingPlace"/>
+
+                    <!-- VILLAGE -->
+                    <include layout="@layout/item_profile_row"
+                        android:id="@+id/rowLocation"/>
+
+                    <!-- PHONE -->
+                    <include layout="@layout/item_profile_row"
+                        android:id="@+id/rowPhone"/>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- ── ACTION BUTTONS ─────────────────────────────────── -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <Button
+                    android:id="@+id/btnBookSession"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:text="📅 Book a Session"
+                    android:textColor="#FFFFFF"
+                    android:textStyle="bold"
+                    android:textSize="17sp"
+                    android:backgroundTint="#0D47A1"
+                    android:layout_marginBottom="12dp"/>
+
+                <Button
+                    android:id="@+id/btnThankYou"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:text="🙏 Say Thank You"
+                    android:textColor="#0D47A1"
+                    android:textSize="15sp"
+                    android:backgroundTint="#E3F2FD"
+                    android:layout_marginBottom="12dp"/>
+
+                <Button
+                    android:id="@+id/btnEditProfile"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:text="✏️ Edit Profile"
+                    android:textColor="#E65100"
+                    android:textSize="15sp"
+                    android:backgroundTint="#FFF3E0"
+                    android:layout_marginBottom="30dp"/>
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

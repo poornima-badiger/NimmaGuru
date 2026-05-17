@@ -10,7 +10,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.nimmaguru.R
 import java.util.Locale
 
-class LoginActivity : AppCompatActivity() {
+class LoginActivity : BaseActivity() {
 
     // Current language — default English
     private var currentLang = "en"

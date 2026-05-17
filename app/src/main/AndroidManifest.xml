@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
     <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,23 +10,22 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.NimmaGuru">
 
-        <!-- Splash (LAUNCHER) -->
-        <activity
-            android:name=".activities.SplashActivity"
-            android:exported="true">
+        <!-- LAUNCHER -->
+        <activity android:name=".activities.SplashActivity" android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
 
-        <!-- Core Activities -->
+        <!-- AUTH -->
         <activity android:name=".activities.LoginActivity"/>
-        <activity android:name=".activities.OnboardingActivity"/>
         <activity android:name=".activities.RegisterActivity"/>
+        <activity android:name=".activities.OnboardingActivity"/>
 
-        <!-- Student Flow -->
+        <!-- STUDENT FLOW -->
         <activity android:name=".activities.StudentLoginActivity"/>
+        <activity android:name=".activities.StudentProfileActivity"/>
         <activity android:name=".activities.HomeActivity"/>
         <activity android:name=".activities.ProfileActivity"/>
         <activity android:name=".activities.BookingActivity"/>
@@ -36,13 +36,13 @@
         <activity android:name=".activities.SettingsActivity"/>
         <activity android:name=".activities.AiAssistantActivity"/>
 
-        <!-- Guru Flow -->
+        <!-- GURU FLOW -->
         <activity android:name=".activities.GuruLoginActivity"/>
         <activity android:name=".activities.GuruProfileSetupActivity"/>
         <activity android:name=".activities.GuruHomeActivity"/>
         <activity android:name=".activities.EditProfileActivity"/>
 
-        <!-- Other -->
+        <!-- OTHER -->
         <activity android:name=".activities.NearbyGuruActivity"/>
 
     </application>

@@ -9,7 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.nimmaguru.R
 import com.google.firebase.auth.FirebaseAuth
 
-class RegisterActivity : AppCompatActivity() {
+class RegisterActivity : BaseActivity() {
 
     private lateinit var firebaseAuth: FirebaseAuth
 

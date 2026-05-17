@@ -8,7 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.nimmaguru.R
 import com.google.firebase.firestore.FirebaseFirestore
 
-class EditProfileActivity : AppCompatActivity() {
+class EditProfileActivity : BaseActivity() {
 
     lateinit var edtName: EditText
     lateinit var edtSubject: EditText
@@ -63,7 +63,7 @@ class EditProfileActivity : AppCompatActivity() {
                 .update(updatedData)
                 .addOnSuccessListener {
 
-                    Toast.makeText(this, "Profile Updated", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "Profile Updated",  Toast.LENGTH_SHORT).show()
                     finish()
                 }
                 .addOnFailureListener {

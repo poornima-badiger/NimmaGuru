@@ -6,53 +6,70 @@
     android:orientation="vertical"
     android:background="#FFFDF0">
 
-    <!-- ── HEADER ─────────────────────────────────────────────────────── -->
+    <!-- HEADER -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#F4B400"
         android:orientation="vertical"
         android:gravity="center_horizontal"
-        android:paddingTop="36dp"
-        android:paddingBottom="28dp"
-        android:paddingStart="24dp"
-        android:paddingEnd="24dp">
+        android:paddingTop="24dp"
+        android:paddingBottom="20dp">
 
-        <!-- Avatar circle -->
-        <LinearLayout
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:background="@drawable/circle_white"
-            android:gravity="center"
-            android:orientation="vertical">
+        <!-- PHOTO UPLOAD CIRCLE -->
+        <FrameLayout
+            android:layout_width="110dp"
+            android:layout_height="110dp">
+
+            <ImageView
+                android:id="@+id/imgGuruPhoto"
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                android:src="@drawable/guru1"
+                android:scaleType="centerCrop"
+                android:background="@drawable/circle_white"
+                android:clickable="true"
+                android:focusable="true"/>
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="👨‍🏫"
-                android:textSize="48sp"/>
-        </LinearLayout>
+                android:id="@+id/btnPickPhoto"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:text="📷"
+                android:textSize="17sp"
+                android:gravity="center"
+                android:background="#E65100"
+                android:layout_gravity="bottom|end"
+                android:clickable="true"
+                android:focusable="true"/>
+        </FrameLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tap 📷 to upload profile photo"
+            android:textSize="12sp"
+            android:textColor="#FFF8E1"
+            android:layout_marginTop="6dp"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Create Guru Profile"
-            android:textSize="26sp"
+            android:textSize="22sp"
             android:textStyle="bold"
             android:textColor="#FFFFFF"
-            android:layout_marginTop="14dp"/>
+            android:layout_marginTop="10dp"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="ಗುರು ಪ್ರೊಫೈಲ್ ರಚಿಸಿ"
-            android:textSize="15sp"
+            android:textSize="13sp"
             android:textColor="#FFF8E1"
-            android:layout_marginTop="4dp"/>
-
+            android:layout_marginTop="2dp"/>
     </LinearLayout>
 
-    <!-- ── FORM CARD ──────────────────────────────────────────────────── -->
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -62,154 +79,179 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="20dp">
+            android:padding="16dp">
 
-            <!-- CARD WRAPPER -->
+            <!-- PHOTO STATUS -->
+            <TextView
+                android:id="@+id/tvPhotoStatus"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="📷 No photo selected — tap the camera icon above"
+                android:textSize="12sp"
+                android:textColor="#888888"
+                android:gravity="center"
+                android:layout_marginBottom="12dp"/>
+
+            <!-- FORM CARD -->
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:cardCornerRadius="20dp"
-                app:cardElevation="8dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="6dp"
                 app:cardBackgroundColor="#FFFFFF"
-                android:layout_marginBottom="20dp">
+                android:layout_marginBottom="16dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:padding="24dp">
+                    android:padding="20dp">
 
-                    <!-- FULL NAME -->
-                    <LinearLayout
+                    <!-- SECTION: PERSONAL INFO -->
+                    <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:gravity="center_vertical"
-                        android:layout_marginBottom="6dp">
+                        android:text="👤 Personal Information"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:textColor="#F4B400"
+                        android:background="#FFF8E1"
+                        android:padding="10dp"
+                        android:layout_marginBottom="14dp"/>
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="👤"
-                            android:textSize="20sp"
-                            android:layout_marginEnd="8dp"/>
+                    <!-- GURU NAME -->
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Guru Name *" android:textSize="13sp" android:textStyle="bold"
+                        android:textColor="#333333" android:layout_marginBottom="4dp"/>
+                    <EditText android:id="@+id/edtName" android:layout_width="match_parent"
+                        android:layout_height="52dp" android:hint="e.g. Ravi Kumar"
+                        android:background="#F8F9FA" android:padding="12dp"
+                        android:inputType="textPersonName" android:layout_marginBottom="14dp"/>
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Full Name"
-                            android:textSize="14sp"
-                            android:textStyle="bold"
-                            android:textColor="#333333"/>
-                    </LinearLayout>
+                    <!-- AGE -->
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Age *" android:textSize="13sp" android:textStyle="bold"
+                        android:textColor="#333333" android:layout_marginBottom="4dp"/>
+                    <EditText android:id="@+id/edtAge" android:layout_width="match_parent"
+                        android:layout_height="52dp" android:hint="e.g. 62"
+                        android:background="#F8F9FA" android:padding="12dp"
+                        android:inputType="number" android:layout_marginBottom="14dp"/>
 
-                    <EditText
-                        android:id="@+id/edtName"
-                        android:layout_width="match_parent"
-                        android:layout_height="55dp"
-                        android:hint="e.g. Vishwanath Sir"
-                        android:background="#F8F9FA"
-                        android:padding="14dp"
-                        android:inputType="textPersonName"
-                        android:layout_marginBottom="20dp"/>
+                    <!-- PROFESSION -->
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Profession *" android:textSize="13sp" android:textStyle="bold"
+                        android:textColor="#333333" android:layout_marginBottom="4dp"/>
+                    <EditText android:id="@+id/edtProfession" android:layout_width="match_parent"
+                        android:layout_height="52dp" android:hint="e.g. Retired Science Teacher"
+                        android:background="#F8F9FA" android:padding="12dp"
+                        android:layout_marginBottom="14dp"/>
 
-                    <!-- SUBJECT -->
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:gravity="center_vertical"
-                        android:layout_marginBottom="6dp">
+                    <!-- EXPERIENCE -->
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Experience" android:textSize="13sp" android:textStyle="bold"
+                        android:textColor="#333333" android:layout_marginBottom="4dp"/>
+                    <EditText android:id="@+id/edtExperience" android:layout_width="match_parent"
+                        android:layout_height="52dp" android:hint="e.g. 35 Years"
+                        android:background="#F8F9FA" android:padding="12dp"
+                        android:layout_marginBottom="14dp"/>
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="📘"
-                            android:textSize="20sp"
-                            android:layout_marginEnd="8dp"/>
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Subject You Teach"
-                            android:textSize="14sp"
-                            android:textStyle="bold"
-                            android:textColor="#333333"/>
-                    </LinearLayout>
-
-                    <EditText
-                        android:id="@+id/edtSubject"
-                        android:layout_width="match_parent"
-                        android:layout_height="55dp"
-                        android:hint="e.g. Math, Science, English"
-                        android:background="#F8F9FA"
-                        android:padding="14dp"
-                        android:layout_marginBottom="20dp"/>
-
-                    <!-- FREE HOURS -->
-                    <LinearLayout
+                    <!-- SECTION: TEACHING INFO -->
+                    <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:gravity="center_vertical"
-                        android:layout_marginBottom="6dp">
+                        android:text="📘 Teaching Information"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:textColor="#F4B400"
+                        android:background="#FFF8E1"
+                        android:padding="10dp"
+                        android:layout_marginBottom="14dp"
+                        android:layout_marginTop="6dp"/>
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="⏰"
-                            android:textSize="20sp"
-                            android:layout_marginEnd="8dp"/>
+                    <!-- SKILLS -->
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Skills / Subjects *" android:textSize="13sp" android:textStyle="bold"
+                        android:textColor="#333333" android:layout_marginBottom="4dp"/>
+                    <EditText android:id="@+id/edtSubject" android:layout_width="match_parent"
+                        android:layout_height="52dp" android:hint="e.g. Science, Mathematics"
+                        android:background="#F8F9FA" android:padding="12dp"
+                        android:layout_marginBottom="14dp"/>
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Free Hours / Availability"
-                            android:textSize="14sp"
-                            android:textStyle="bold"
-                            android:textColor="#333333"/>
-                    </LinearLayout>
+                    <!-- LANGUAGES -->
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Languages Known" android:textSize="13sp" android:textStyle="bold"
+                        android:textColor="#333333" android:layout_marginBottom="4dp"/>
+                    <EditText android:id="@+id/edtLanguages" android:layout_width="match_parent"
+                        android:layout_height="52dp" android:hint="e.g. Kannada, English"
+                        android:background="#F8F9FA" android:padding="12dp"
+                        android:layout_marginBottom="14dp"/>
 
-                    <EditText
-                        android:id="@+id/edtTime"
-                        android:layout_width="match_parent"
-                        android:layout_height="55dp"
-                        android:hint="e.g. Sunday 10AM - 1PM"
-                        android:background="#F8F9FA"
-                        android:padding="14dp"
-                        android:layout_marginBottom="20dp"/>
+                    <!-- AVAILABLE DAYS -->
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Available Days *" android:textSize="13sp" android:textStyle="bold"
+                        android:textColor="#333333" android:layout_marginBottom="4dp"/>
+                    <EditText android:id="@+id/edtAvailableDays" android:layout_width="match_parent"
+                        android:layout_height="52dp" android:hint="e.g. Saturday and Sunday"
+                        android:background="#F8F9FA" android:padding="12dp"
+                        android:layout_marginBottom="14dp"/>
 
-                    <!-- VILLAGE / LOCATION -->
-                    <LinearLayout
+                    <!-- AVAILABLE TIME -->
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Available Time *" android:textSize="13sp" android:textStyle="bold"
+                        android:textColor="#333333" android:layout_marginBottom="4dp"/>
+                    <EditText android:id="@+id/edtTime" android:layout_width="match_parent"
+                        android:layout_height="52dp" android:hint="e.g. 4:00 PM – 6:00 PM"
+                        android:background="#F8F9FA" android:padding="12dp"
+                        android:layout_marginBottom="14dp"/>
+
+                    <!-- TEACHING PLACE -->
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Teaching Place" android:textSize="13sp" android:textStyle="bold"
+                        android:textColor="#333333" android:layout_marginBottom="4dp"/>
+                    <EditText android:id="@+id/edtTeachingPlace" android:layout_width="match_parent"
+                        android:layout_height="52dp" android:hint="e.g. Samudaya Bhavana"
+                        android:background="#F8F9FA" android:padding="12dp"
+                        android:layout_marginBottom="14dp"/>
+
+                    <!-- SECTION: LOCATION & CONTACT -->
+                    <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:gravity="center_vertical"
-                        android:layout_marginBottom="6dp">
+                        android:text="📍 Location and Contact"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:textColor="#F4B400"
+                        android:background="#FFF8E1"
+                        android:padding="10dp"
+                        android:layout_marginBottom="14dp"
+                        android:layout_marginTop="6dp"/>
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="📍"
-                            android:textSize="20sp"
-                            android:layout_marginEnd="8dp"/>
+                    <!-- VILLAGE -->
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Village / Area *" android:textSize="13sp" android:textStyle="bold"
+                        android:textColor="#333333" android:layout_marginBottom="4dp"/>
+                    <EditText android:id="@+id/edtLocation" android:layout_width="match_parent"
+                        android:layout_height="52dp" android:hint="e.g. Hulkoti, Gadag, Hubli"
+                        android:background="#F8F9FA" android:padding="12dp"
+                        android:layout_marginBottom="14dp"/>
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Village / Location"
-                            android:textSize="14sp"
-                            android:textStyle="bold"
-                            android:textColor="#333333"/>
-                    </LinearLayout>
+                    <!-- PHONE -->
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Contact Number" android:textSize="13sp" android:textStyle="bold"
+                        android:textColor="#333333" android:layout_marginBottom="4dp"/>
+                    <EditText android:id="@+id/edtPhone" android:layout_width="match_parent"
+                        android:layout_height="52dp" android:hint="e.g. 9876543210"
+                        android:background="#F8F9FA" android:padding="12dp"
+                        android:inputType="phone" android:layout_marginBottom="14dp"/>
 
-                    <EditText
-                        android:id="@+id/edtLocation"
-                        android:layout_width="match_parent"
-                        android:layout_height="55dp"
-                        android:hint="e.g. Gadag, Hubli, Hulkoti"
-                        android:background="#F8F9FA"
-                        android:padding="14dp"
+                    <!-- ABOUT -->
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="About Guru" android:textSize="13sp" android:textStyle="bold"
+                        android:textColor="#333333" android:layout_marginBottom="4dp"/>
+                    <EditText android:id="@+id/edtAbout" android:layout_width="match_parent"
+                        android:layout_height="100dp" android:hint="e.g. Helping village students improve Science and Math knowledge free of cost."
+                        android:background="#F8F9FA" android:padding="12dp"
+                        android:gravity="top" android:inputType="textMultiLine"
                         android:layout_marginBottom="8dp"/>
 
                 </LinearLayout>
@@ -223,46 +265,26 @@
                 android:orientation="horizontal"
                 android:padding="14dp"
                 android:gravity="center_vertical"
-                android:layout_marginBottom="24dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="💡"
-                    android:textSize="18sp"
-                    android:layout_marginEnd="10dp"/>
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="💡" android:textSize="18sp" android:layout_marginEnd="10dp"/>
+                <TextView android:layout_width="0dp" android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Your profile will be visible to students in your village. Fill all fields carefully."
-                    android:textSize="13sp"
-                    android:textColor="#795548"/>
+                    android:text="Fields marked * are required. Your profile will be visible to students in your village."
+                    android:textSize="13sp" android:textColor="#795548"/>
             </LinearLayout>
 
             <!-- SAVE BUTTON -->
-            <Button
-                android:id="@+id/btnSaveGuru"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:text="✅  Save Guru Profile"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                android:textColor="#FFFFFF"
-                android:backgroundTint="#F4B400"
-                android:layout_marginBottom="12dp"/>
+            <Button android:id="@+id/btnSaveGuru" android:layout_width="match_parent"
+                android:layout_height="58dp" android:text="✅  Save Guru Profile"
+                android:textSize="17sp" android:textStyle="bold" android:textColor="#FFFFFF"
+                android:backgroundTint="#F4B400" android:layout_marginBottom="12dp"/>
 
-            <!-- GO TO HOME BUTTON -->
-            <Button
-                android:id="@+id/btnGoHome"
-                android:layout_width="match_parent"
-                android:layout_height="52dp"
-                android:text="Go to Home"
-                android:textSize="15sp"
-                android:textColor="#E65100"
-                android:backgroundTint="#FFF3E0"
-                android:layout_marginBottom="30dp"/>
+            <!-- GO HOME -->
+            <Button android:id="@+id/btnGoHome" android:layout_width="match_parent"
+                android:layout_height="50dp" android:text="Go to Home"
+                android:textSize="15sp" android:textColor="#E65100"
+                android:backgroundTint="#FFF3E0" android:layout_marginBottom="30dp"/>
 
         </LinearLayout>
     </ScrollView>

@@ -9,7 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.nimmaguru.R
 import com.google.firebase.firestore.FirebaseFirestore
 
-class BookingActivity : AppCompatActivity() {
+class BookingActivity : BaseActivity() {
 
     lateinit var tvGuruName: TextView
     lateinit var etDate: EditText

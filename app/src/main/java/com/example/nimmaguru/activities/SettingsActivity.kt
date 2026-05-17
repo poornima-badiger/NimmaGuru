@@ -9,7 +9,7 @@ import com.example.nimmaguru.R
 import com.google.firebase.auth.FirebaseAuth
 import java.util.Locale
 
-class SettingsActivity : AppCompatActivity() {
+class SettingsActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

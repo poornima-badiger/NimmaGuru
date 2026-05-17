@@ -15,7 +15,7 @@ import org.json.JSONArray
 import org.json.JSONObject
 import java.io.IOException
 
-class AiAssistantActivity : AppCompatActivity() {
+class AiAssistantActivity : BaseActivity() {
 
     private lateinit var etQuestion: EditText
     private lateinit var btnAsk: Button

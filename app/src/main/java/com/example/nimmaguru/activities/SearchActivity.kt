@@ -11,7 +11,7 @@ import androidx.cardview.widget.CardView
 import com.example.nimmaguru.R
 import com.google.firebase.firestore.FirebaseFirestore
 
-class SearchActivity : AppCompatActivity() {
+class SearchActivity : BaseActivity() {
 
     private lateinit var etSearch: EditText
     private lateinit var container: LinearLayout

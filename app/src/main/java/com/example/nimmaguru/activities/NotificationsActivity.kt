@@ -8,7 +8,7 @@ import androidx.cardview.widget.CardView
 import com.example.nimmaguru.R
 import com.google.firebase.firestore.FirebaseFirestore
 
-class NotificationsActivity : AppCompatActivity() {
+class NotificationsActivity : BaseActivity() {
 
     private lateinit var container: LinearLayout
     private val db = FirebaseFirestore.getInstance()

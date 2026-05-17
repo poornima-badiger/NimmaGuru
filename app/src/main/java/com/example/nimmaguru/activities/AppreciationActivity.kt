@@ -10,7 +10,7 @@ import com.example.nimmaguru.R
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.Query
 
-class AppreciationActivity : AppCompatActivity() {
+class AppreciationActivity : BaseActivity() {
 
     private lateinit var etGuruName: EditText
     private lateinit var etMessage: EditText
@@ -29,6 +29,12 @@ class AppreciationActivity : AppCompatActivity() {
 
         val btnBack = findViewById<ImageButton>(R.id.btnBack)
         btnBack.setOnClickListener { finish() }
+
+        // Pre-fill guru name if coming from Profile page
+        val prefillName = intent.getStringExtra("guru_name_prefill")
+        if (!prefillName.isNullOrEmpty()) {
+            etGuruName.setText(prefillName)
+        }
 
         // Load existing appreciations
         loadAppreciations()
